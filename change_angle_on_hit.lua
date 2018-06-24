@@ -47,7 +47,6 @@ end
 
 local function reset_antiaim()
     if cur_antiaim ~= antiaims[1] then
-        client.log("resetting");
         cur_antiaim = antiaims[1];
         ui.set(refs.yaw, cur_antiaim);
     end
@@ -60,8 +59,6 @@ end
 local function change_antiaim()
     for _, val in pairs(antiaims) do
         if not is_blacklisted(val) then
-            client.log(val .. " isn't blacklisted");
-            --client.log(val);
             cur_antiaim = val;
             ui.set(refs.yaw, cur_antiaim);
             return;
