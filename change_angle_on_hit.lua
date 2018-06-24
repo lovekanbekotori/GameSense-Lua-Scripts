@@ -17,8 +17,7 @@ local antiaims = {
     "Sideways", "180 Z", "180"
 };
 -- used when all antiaims are blacklisted
--- set to nil if you want to set it to
--- a random blacklisted angle
+-- set to nil if you want to reset the cycle
 local fallback_antiaim = nil;
 
 local cur_antiaim = antiaims[1];
@@ -68,7 +67,7 @@ local function change_antiaim()
     if fallback_antiaim ~= nil then
         ui.set(refs.yaw, fallback_antiaim);
     else
-        ui.set(refs.yaw, hit_antiaims[client.random_int(1, #hit_antiaims)]);
+        reset_antiaim();
     end
 end
 
