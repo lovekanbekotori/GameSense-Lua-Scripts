@@ -9,15 +9,14 @@ sliders.reset_time = ui.new_slider("AA", "Anti-aimbot angles", "Reset time", 1,
 local refs = {};
 refs.yaw = ui.reference("AA", "Anti-aimbot angles", "Yaw");
 
--- set defaults
-ui.set(toggles.enabled, false);
-ui.set(sliders.reset_time, 1);
-
+-- antiaims you want to cycle through
 local antiaims = {
     "Sideways", "180 Z", "180"
 };
--- used when all antiaims are blacklisted
--- set to nil if you want to reset the cycle
+
+-- the antiaim thats used when all antiaims are blacklisted
+-- ex "Random" or "Spin"
+-- leave nil if you want to cycle through antiaims again
 local fallback_antiaim = nil;
 
 local cur_antiaim = antiaims[1];

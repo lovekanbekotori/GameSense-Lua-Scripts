@@ -31,6 +31,7 @@ local function on_paint(ctx)
     end
 
     local flags = entity.get_prop(local_player, "m_fFlags");
+                     -- flags & 1 << 0
     local onground = bit.band(flags, bit.lshift(1, 0));
 
     if onground == 1 then
